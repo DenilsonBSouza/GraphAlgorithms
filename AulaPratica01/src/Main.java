@@ -15,5 +15,13 @@ public class Main {
         System.out.println(g1.degree(1));
         System.out.println(g1.degree(2));
         System.out.println(g1.degree(3));
+
+        System.out.println();
+        System.out.println("O maior grau é: " + g1.highhestDegree());
+        System.out.println();
+        System.out.println("O menor grau é: " + g1.lowestDegree());
+        System.out.println();
+        System.out.println("Grafo Complementar");
+        System.out.println(g1.complement());
     }
 }
