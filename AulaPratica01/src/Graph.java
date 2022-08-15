@@ -10,11 +10,11 @@ public class Graph {
     }
 
     public int getCountNodes() {
-        return countNodes;
+        return this.countNodes;
     }
 
     public int getCountEdges() {
-        return countEdges;
+        return this.countEdges;
     }
 
     public int[][] getAdMatrix() {
@@ -33,9 +33,10 @@ public class Graph {
     }
 
     public void addEdge(int source, int sink, int weight) {
+        // if (source < 0 || source > this.countNodes - 1
         if (source < 0 || source > this.countNodes - 1
                 || sink < 0 || sink > this.countNodes - 1 || weight <= 0) {
-            System.err.println("Invalid value for source, sink or weigh");
+            System.err.println("Invalid edge: =  " + source + sink + weight);
             return;
         }
         this.adjMatrix[source][sink] = weight;
@@ -54,7 +55,7 @@ public class Graph {
         return degree;
     }
 
-    public int highhestDegree() {
+    public int highestDegree() {
         // Returns the highest in the graph
         int highest = 0;
         for (int i = 0; i < this.adjMatrix.length; ++i) {
